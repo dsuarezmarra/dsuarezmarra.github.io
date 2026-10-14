@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>AutoShorts — authorization</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 780px; margin: 0 auto; padding: 2rem 1.2rem 4rem;
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: #1a1a1a; background: #fff; }
+  h1 { font-size: 1.5rem; }
+  .muted { color: #666; font-size: .92rem; }
+  a { color: #1a73e8; }
+  textarea { width: 100%; box-sizing: border-box; font: 14px/1.4 ui-monospace, Consolas, monospace;
+             padding: .6rem; border-radius: 6px; border: 1px solid #ccc; resize: vertical; }
+  button { font: inherit; padding: .5rem 1.1rem; border-radius: 6px; border: 0; background: #1a73e8;
+           color: #fff; cursor: pointer; margin-top: .6rem; }
+  .error { color: #b3261e; }
+  [hidden] { display: none; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #121212; } .muted { color: #aaa; } a { color: #8ab4f8; }
+    textarea { background: #1e1e1e; color: #e8e8e8; border-color: #444; } .error { color: #f2b8b5; }
+  }
+</style>
+</head>
+<body>
+<h1>AutoShorts — TikTok authorization</h1>
+
+<div id="ok" hidden>
+  <p>Copy this return address and paste it in the terminal where <code>tiktok auth</code> is waiting.
+  It is only shown on this page: nothing is sent anywhere.</p>
+  <p class="muted">Copia esta dirección de retorno y pégala en la terminal donde espera
+  <code>tiktok auth</code>. Solo se muestra en esta página: no se envía a ningún sitio.</p>
+  <textarea id="url" rows="4" readonly></textarea>
+  <button id="copy" type="button">Copy / Copiar</button> <span id="copied" class="muted" hidden>Copied / Copiado</span>
+</div>
+
+<div id="err" hidden>
+  <p class="error">TikTok did not authorize the app / TikTok no autorizó la aplicación:</p>
+  <p class="error"><code id="errtext"></code></p>
+</div>
+
+<div id="none" hidden>
+  <p>This is the return page of the AutoShorts TikTok authorization. Open it from the authorization link,
+  not directly.</p>
+  <p class="muted">Esta es la página de retorno de la autorización de TikTok de AutoShorts. Se llega a ella
+  desde el enlace de autorización, no directamente.</p>
+</div>
+
+<p class="muted"><a href="../">AutoShorts</a> · <a href="../privacy.html">Privacy</a> ·
+<a href="../terms.html">Terms</a></p>
+
+<script>
+  (function () {
+    var q = new URLSearchParams(window.location.search);
+    if (q.get("error")) {
+      document.getElementById("errtext").textContent =
+        q.get("error") + (q.get("error_description") ? " — " + q.get("error_description") : "");
+      document.getElementById("err").hidden = false;
+    } else if (q.get("code")) {
+      var box = document.getElementById("url");
+      box.value = window.location.href;
+      document.getElementById("ok").hidden = false;
+      document.getElementById("copy").addEventListener("click", function () {
+        box.select();
+        var done = function () { document.getElementById("copied").hidden = false; };
+        if (navigator.clipboard) { navigator.clipboard.writeText(box.value).then(done, function () { document.execCommand("copy"); done(); }); }
+        else { document.execCommand("copy"); done(); }
+      });
+    } else {
+      document.getElementById("none").hidden = false;
+    }
+  })();
+</script>
+</body>
+</html>

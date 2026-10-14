@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoShorts</title>
+<link rel="icon" type="image/png" href="icon.png">
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 780px; margin: 0 auto; padding: 2rem 1.2rem 4rem;
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: #1a1a1a; background: #fff; }
+  h1 { font-size: 1.7rem; margin-bottom: .2rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #e2e2e2; padding-bottom: .3rem; }
+  .muted { color: #666; font-size: .92rem; }
+  a { color: #1a73e8; }
+  nav { margin-bottom: 1.5rem; font-size: .95rem; }
+  nav a { margin-right: 1rem; }
+  hr.lang { margin: 3rem 0; border: 0; border-top: 2px solid #e2e2e2; }
+  header { display: flex; align-items: center; gap: 1rem; }
+  header img { width: 72px; height: 72px; border-radius: 16px; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #121212; }
+    h2 { border-color: #333; } .muted { color: #aaa; }
+    hr.lang { border-color: #333; } a { color: #8ab4f8; }
+  }
+</style>
+</head>
+<body>
+
+<nav><a href="#en">English</a> <a href="#es">Español</a> <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a></nav>
+
+<!-- ================= ENGLISH ================= -->
+<div id="en">
+<header><img src="icon.png" alt="AutoShorts icon"><h1>AutoShorts</h1></header>
+
+<p>AutoShorts is a personal software tool by <strong>David Suárez Marra</strong> (Spain). It produces short
+vertical videos (Shorts, Reels and TikToks) in Spanish and English about current topics and evergreen
+curiosities, and publishes them to the owner's own AutoShorts accounts on TikTok, Instagram and YouTube.</p>
+
+<h2>How it works</h2>
+<ul>
+  <li>The script is written with an AI language model and fact-checked against the news sources it cites
+      before any video is made.</li>
+  <li>The narration and every shot of footage are generated with AI on the owner's computer. No stock
+      footage and no real people's faces are used. Every upload is labeled as AI-generated content.</li>
+  <li>At most three videos per day and per language are published, at fixed times, after the owner has had
+      the chance to review them.</li>
+</ul>
+
+<h2>How it uses TikTok</h2>
+<p>AutoShorts uses <strong>Login Kit</strong> so that the owner can authorize it once on each of his own
+TikTok accounts (scopes <code>user.info.basic</code> and <code>video.publish</code>), and the
+<strong>Content Posting API</strong> (Direct Post) to upload each finished video with its caption, marked as
+AI-generated content. It does not read followers, messages, comments or data about other users.</p>
+
+<p>The app is not offered to the public: the only person who signs in to it is the owner.</p>
+
+<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · Contact:
+<a href="mailto:dsuarezmarra@gmail.com">dsuarezmarra@gmail.com</a></p>
+</div>
+
+<hr class="lang">
+
+<!-- ================= ESPAÑOL ================= -->
+<div id="es" lang="es">
+<h1>AutoShorts</h1>
+
+<p>AutoShorts es una herramienta personal de <strong>David Suárez Marra</strong> (España). Produce vídeos
+verticales cortos (Shorts, Reels y TikToks) en español e inglés sobre temas de actualidad y curiosidades, y
+los publica en las cuentas de AutoShorts del propio dueño en TikTok, Instagram y YouTube.</p>
+
+<h2>Cómo funciona</h2>
+<ul>
+  <li>El guion lo escribe un modelo de lenguaje y se comprueba contra las fuentes que cita antes de hacer
+      ningún vídeo.</li>
+  <li>La narración y cada plano se generan con IA en el ordenador del dueño. No se usa metraje de archivo
+      ni caras de personas reales. Cada subida se marca como contenido generado con IA.</li>
+  <li>Se publican como mucho tres vídeos al día por idioma, a horas fijas, después de que el dueño haya
+      podido revisarlos.</li>
+</ul>
+
+<h2>Cómo usa TikTok</h2>
+<p>AutoShorts usa <strong>Login Kit</strong> para que el dueño la autorice una vez en cada una de sus
+cuentas de TikTok (permisos <code>user.info.basic</code> y <code>video.publish</code>) y la
+<strong>Content Posting API</strong> (publicación directa) para subir cada vídeo terminado con su texto,
+marcado como contenido generado con IA. No lee seguidores, mensajes, comentarios ni datos de otros
+usuarios.</p>
+
+<p>La aplicación no se ofrece al público: la única persona que inicia sesión en ella es el dueño.</p>
+
+<p><a href="privacy.html#es">Política de privacidad</a> · <a href="terms.html#es">Términos del servicio</a> ·
+Contacto: <a href="mailto:dsuarezmarra@gmail.com">dsuarezmarra@gmail.com</a></p>
+</div>
+
+</body>
+</html>
