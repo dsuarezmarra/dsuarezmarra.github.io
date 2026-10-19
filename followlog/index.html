@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FollowLog: see who unfollowed you</title>
+<meta name="description" content="FollowLog shows who unfollowed you, your new followers and who doesn't follow you back. You sign in on Instagram's own website; your lists stay on your phone.">
+<link rel="icon" href="img/icon.png">
+<meta property="og:title" content="FollowLog: see who unfollowed you">
+<meta property="og:description" content="Unfollowers, new followers and who doesn't follow you back. Your lists stay on your phone.">
+<meta property="og:image" content="https://dsuarezmarra.github.io/followlog/img/feature.png">
+<style>
+  :root { --ink: #1a1a2b; --soft: #5b5a6b; --bg: #f8f7fc; --card: #ffffff; --line: #e4e2ef; --brand: #4f46e5; --deep: #312e81; --mint: #10b981; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e6e6f2; --soft: #b8b8cc; --bg: #0f1020; --card: #17182b; --line: #2a2c45; --brand: #a5b4fc; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.55; color: var(--ink); background: var(--bg); }
+  a { color: var(--brand); }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+  nav .logo { display: flex; align-items: center; gap: .6rem; font-weight: 700; font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+  nav .logo img { width: 36px; height: 36px; border-radius: 9px; }
+  nav .langs a { margin-left: 1rem; }
+  .hero { color: #fff; border-radius: 28px; padding: 3rem 2rem; margin: .5rem 0 2.5rem;
+          background: radial-gradient(600px 400px at 100% 0%, rgba(244,63,94,.32), transparent 65%),
+                      radial-gradient(600px 400px at 0% 100%, rgba(16,185,129,.26), transparent 65%),
+                      linear-gradient(135deg, #312e81 0%, #4f46e5 60%, #6366f1 100%); }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 0 0 1rem; }
+  .hero p { font-size: 1.2rem; max-width: 36rem; margin: 0 0 1.5rem; opacity: .92; }
+  .hero .badge img { height: 64px; }
+  .shots { display: flex; gap: 1rem; overflow-x: auto; padding-bottom: .5rem; scroll-snap-type: x mandatory; }
+  .shots img { width: 240px; flex: none; border-radius: 18px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(20,10,60,.18); }
+  h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.2rem 1.3rem; }
+  .card h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--soft); }
+  .promises { list-style: none; padding: 0; margin: 0; display: grid; gap: .7rem; }
+  .promises li { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: .8rem 1rem .8rem 2.8rem; position: relative; }
+  .promises li::before { content: ""; position: absolute; left: 1rem; top: 1.05rem; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--mint); }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: .9rem 1.1rem; margin-bottom: .6rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--soft); margin: .6rem 0 0; }
+  footer { margin: 3rem 0 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--soft); font-size: .92rem; }
+  hr.lang { border: 0; border-top: 1px solid var(--line); margin: 4rem 0 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <a class="logo" href="#en"><img src="img/icon.png" alt="">FollowLog</a>
+  <span class="langs"><a href="#en">English</a><a href="#es">Español</a></span>
+</nav>
+
+<!-- ======================================================== English -->
+<section id="en" lang="en">
+  <div class="hero">
+    <h1>See who unfollowed you</h1>
+    <p>FollowLog compares your followers and following lists every time you refresh: who left, who is new and who doesn't follow you back. Your lists stay on your phone.</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=io.github.dsuarezmarra.followlog&amp;referrer=utm_source%3Dfollowlog%26utm_medium%3Dweb"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a>
+  </div>
+
+  <div class="shots">
+    <img src="img/en/1.png" alt="List of people who unfollowed you">
+    <img src="img/en/2.png" alt="People who don't follow you back">
+    <img src="img/en/3.png" alt="Home screen with gains and losses">
+    <img src="img/en/4.png" alt="Private by design">
+  </div>
+
+  <h2>What you see</h2>
+  <div class="grid">
+    <div class="card"><h3>Unfollowers</h3><p>Who stopped following you, and in which reading.</p></div>
+    <div class="card"><h3>Not following back</h3><p>People you follow who don't follow you. Hide celebrities and brands.</p></div>
+    <div class="card"><h3>New followers and fans</h3><p>Who started following you, and who you don't follow back.</p></div>
+    <div class="card"><h3>History and trend</h3><p>Every reading saved, with a chart and a card for each account.</p></div>
+  </div>
+
+  <h2>Private by design</h2>
+  <ul class="promises">
+    <li>You sign in on Instagram's own website inside the app. FollowLog never sees, stores or sends your password.</li>
+    <li>Read-only: it never follows, unfollows, likes or posts anything for you, and it reads only when you tap Refresh.</li>
+    <li>Your lists stay on your phone. There is no FollowLog server and no account to create.</li>
+    <li>Delete one account's history, or everything, from Settings at any time.</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <details><summary>How does FollowLog work?</summary><p>You sign in on Instagram's own website inside the app. When you tap Refresh, that page reads your followers and following lists. FollowLog saves the reading on your phone and compares it with the previous one.</p></details>
+  <details><summary>Is my password safe?</summary><p>FollowLog never sees, stores or sends your password. There is no FollowLog server. Your lists are kept only on your phone and are not included in backups.</p></details>
+  <details><summary>Why might someone show up as an unfollower by mistake?</summary><p>People who deactivate or delete their account, or block you, also disappear from your followers. FollowLog double-checks the accounts that seem to have left (up to 150 per reading), so an incomplete list from Instagram does not create false unfollows.</p></details>
+  <details><summary>Instagram asked me to verify, or limited my account. What now?</summary><p>Open Instagram from FollowLog's Settings, complete the check, wait a while and refresh again. Turn off any VPN. Instagram may limit accounts that use third-party apps.</p></details>
+  <details><summary>How do I delete my data?</summary><p>Settings, Delete all data removes every reading and signs you out. Uninstalling the app also removes everything.</p></details>
+  <details><summary>Can it show who viewed my profile?</summary><p>No. Instagram doesn't share that with any app.</p></details>
+  <details><summary>What does Premium include?</summary><p>A one-time payment with no subscription: no ads anywhere, and refreshing without watching a video.</p></details>
+
+  <h2>Contact</h2>
+  <p>Questions, ideas or problems: <a href="mailto:dsuarezmarra@gmail.com">dsuarezmarra@gmail.com</a>, or "Send feedback" in the app's Settings. <a href="privacy.html">Privacy policy</a>.</p>
+</section>
+
+<hr class="lang">
+
+<!-- ======================================================== Español -->
+<section id="es" lang="es">
+  <div class="hero">
+    <h1>Descubre quién te dejó de seguir</h1>
+    <p>FollowLog compara tus listas de seguidores y seguidos cada vez que actualizas: quién se fue, quién es nuevo y quién no te sigue de vuelta. Tus listas se quedan en tu móvil.</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=io.github.dsuarezmarra.followlog&amp;referrer=utm_source%3Dfollowlog%26utm_medium%3Dweb"><img alt="Disponible en Google Play" src="https://play.google.com/intl/es_es/badges/static/images/badges/es_badge_web_generic.png"></a>
+  </div>
+
+  <div class="shots">
+    <img src="img/es/1.png" alt="Lista de quienes te dejaron de seguir">
+    <img src="img/es/2.png" alt="Quién no te sigue de vuelta">
+    <img src="img/es/3.png" alt="Inicio con altas y bajas">
+    <img src="img/es/4.png" alt="Tu privacidad, primero">
+  </div>
+
+  <h2>Qué ves</h2>
+  <div class="grid">
+    <div class="card"><h3>Unfollowers</h3><p>Quién te ha dejado de seguir y en qué lectura.</p></div>
+    <div class="card"><h3>No te siguen</h3><p>Gente a la que sigues y no te sigue. Oculta famosos y marcas.</p></div>
+    <div class="card"><h3>Nuevos seguidores y fans</h3><p>Quién empezó a seguirte y a quién no sigues tú.</p></div>
+    <div class="card"><h3>Historial y evolución</h3><p>Cada lectura guardada, con gráfica y una ficha por cuenta.</p></div>
+  </div>
+
+  <h2>Tu privacidad, primero</h2>
+  <ul class="promises">
+    <li>Inicias sesión en la propia web de Instagram dentro de la app. FollowLog nunca ve, guarda ni envía tu contraseña.</li>
+    <li>Solo lee: nunca sigue, deja de seguir, da me gusta ni publica nada por ti, y solo lee cuando pulsas Actualizar.</li>
+    <li>Tus listas se quedan en tu móvil. FollowLog no tiene servidor ni te pide crear una cuenta.</li>
+    <li>Borra el historial de una cuenta, o todo, desde Ajustes cuando quieras.</li>
+  </ul>
+
+  <h2>Preguntas</h2>
+  <details><summary>¿Cómo funciona FollowLog?</summary><p>Inicias sesión en la propia web de Instagram, dentro de la app. Cuando pulsas Actualizar, esa página lee tus listas de seguidores y seguidos. FollowLog guarda la lectura en tu móvil y la compara con la anterior.</p></details>
+  <details><summary>¿Está segura mi contraseña?</summary><p>FollowLog nunca ve, guarda ni envía tu contraseña. No tiene servidor. Tus listas se guardan solo en tu móvil y no entran en las copias de seguridad.</p></details>
+  <details><summary>¿Por qué alguien puede aparecer como unfollower por error?</summary><p>Quien desactiva o borra su cuenta, o te bloquea, también desaparece de tus seguidores. FollowLog vuelve a comprobar las cuentas que parecen haberse ido (hasta 150 por lectura), para que una lista incompleta de Instagram no cree falsos unfollows.</p></details>
+  <details><summary>Instagram me pidió verificar o limitó mi cuenta. ¿Qué hago?</summary><p>Abre Instagram desde Ajustes de FollowLog, completa la comprobación, espera un rato y vuelve a actualizar. Apaga la VPN si usas una. Instagram puede limitar las cuentas que usan apps de terceros.</p></details>
+  <details><summary>¿Cómo borro mis datos?</summary><p>Ajustes, Borrar todos los datos elimina todas las lecturas y cierra la sesión. Al desinstalar la app también se borra todo.</p></details>
+  <details><summary>¿Puede mostrar quién ve mi perfil?</summary><p>No. Instagram no comparte ese dato con ninguna app.</p></details>
+  <details><summary>¿Qué incluye Premium?</summary><p>Un pago único, sin suscripción: sin anuncios en ninguna pantalla y actualizar sin ver vídeos.</p></details>
+
+  <h2>Contacto</h2>
+  <p>Dudas, ideas o problemas: <a href="mailto:dsuarezmarra@gmail.com">dsuarezmarra@gmail.com</a>, o «Enviar comentarios» en Ajustes de la app. <a href="privacy.html#es">Política de privacidad</a>.</p>
+</section>
+
+<footer>
+  FollowLog is an independent app. It is not affiliated with, endorsed or sponsored by Instagram or Meta Platforms, Inc. Instagram is a trademark of Meta Platforms, Inc.<br>
+  FollowLog es una app independiente. No está afiliada, avalada ni patrocinada por Instagram ni por Meta Platforms, Inc.<br>
+  Google Play and the Google Play logo are trademarks of Google LLC.
+</footer>
+
+</div>
+</body>
+</html>
